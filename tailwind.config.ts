@@ -19,6 +19,12 @@ const config: Config = {
       backgroundImage: {
         "gradient-conic": "conic-gradient(var(--tw-gradient-stops))",
       },
+      fontSize: {
+        "10xl": "9rem",
+      },
+      width: {
+        "13": "3.25rem",
+      },
     },
   },
   plugins: [],
