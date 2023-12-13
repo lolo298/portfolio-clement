@@ -17,8 +17,10 @@ export default async function ProjectCard({
 
   return (
     <>
-      <div className="flex h-full w-full flex-col justify-center gap-6 p-8">
-        <h3 className="text-3xl font-black uppercase text-black">{title}</h3>
+      <div className="flex h-full w-full flex-col justify-center gap-6 p-8 lg:w-3/4">
+        <h3 className="text-3xl font-black uppercase text-black lg:text-6xl">
+          {title}
+        </h3>
         <div className="flex flex-row gap-2">
           {tags.map((tag, i) => (
             <Tag key={i}>{tag}</Tag>
@@ -32,7 +34,7 @@ export default async function ProjectCard({
           height={500}
           placeholder="blur"
           blurDataURL={base64}
-          className="mt-4"
+          className="mt-4 lg:w-full"
         />
       </div>
     </>

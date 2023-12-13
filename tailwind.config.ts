@@ -25,6 +25,9 @@ const config: Config = {
       width: {
         "13": "3.25rem",
       },
+      animation: {
+        "flowing-text": "flowing-text 20s linear infinite",
+      },
     },
   },
   plugins: [],

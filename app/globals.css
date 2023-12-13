@@ -7,3 +7,12 @@
   /* viewport equivalent */
   /* font-size: 1vw; */
 }
+
+@keyframes flowing-text {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(var(--move));
+  }
+}
