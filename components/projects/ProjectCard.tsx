@@ -3,13 +3,15 @@ import Tag from "@/components/projects/Tag";
 import Image from "next/image";
 import { readFile } from "fs/promises";
 import { getPlaiceholder } from "plaiceholder";
+import { twMerge } from "tailwind-merge";
 
 export default async function ProjectCard({
   title,
   tags,
   date,
   image,
-}: IProjectCard) {
+  pjId,
+}: IProjectCard & { pjId?: string }) {
   const imageBuffer = await readFile(`public${image}`);
   const { base64 } = await getPlaiceholder(imageBuffer, {
     size: 32,
@@ -17,15 +19,24 @@ export default async function ProjectCard({
 
   return (
     <>
-      <div className="flex h-full w-full flex-col justify-center gap-6 p-8 lg:w-3/4">
-        <h3 className="text-3xl font-black uppercase text-black lg:text-6xl">
-          {title}
-        </h3>
-        <div className="flex flex-row gap-2">
-          {tags.map((tag, i) => (
-            <Tag key={i}>{tag}</Tag>
-          ))}
-          <Tag>{date}</Tag>
+      <div
+        className="group/card flex h-full w-full flex-col justify-center gap-6 p-8 tablet:w-3/4 laptop:w-auto laptop:p-0 laptop:grid-in-[--pjId] laptop:hover:brightness-90"
+        style={
+          {
+            "--pjId": pjId,
+          } as React.CSSProperties
+        }
+      >
+        <div className="group-hover/card:block laptop:absolute laptop:top-0 laptop:hidden laptop:p-8">
+          <h3 className="text-3xl font-black uppercase text-black tablet:text-6xl laptop:text-4xl">
+            {title}
+          </h3>
+          <div className="flex flex-row gap-2">
+            {tags.map((tag, i) => (
+              <Tag key={i}>{tag}</Tag>
+            ))}
+            <Tag>{date}</Tag>
+          </div>
         </div>
         <Image
           src={image}
@@ -34,7 +45,7 @@ export default async function ProjectCard({
           height={500}
           placeholder="blur"
           blurDataURL={base64}
-          className="mt-4 lg:w-full"
+          className="mt-4 tablet:w-full laptop:h-full laptop:w-full laptop:object-cover laptop:object-center"
         />
       </div>
     </>
