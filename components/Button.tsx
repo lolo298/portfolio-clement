@@ -10,7 +10,7 @@ export default function Button({
   return (
     <button
       className={twMerge(
-        "bg-[url('/buttonBlob.svg')] bg-contain bg-center bg-no-repeat p-4 font-semibold text-white",
+        "bg-[url('/buttonBlob.svg')] bg-[size:400%_100%] bg-center bg-no-repeat p-4 font-semibold text-white",
         className
       )}
     >

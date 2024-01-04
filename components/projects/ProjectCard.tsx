@@ -20,7 +20,7 @@ export default async function ProjectCard({
   return (
     <>
       <div
-        className="group/card flex h-full w-full flex-col justify-center gap-6 p-8 tablet:w-3/4 laptop:w-auto laptop:p-0 laptop:grid-in-[--pjId] laptop:hover:brightness-90"
+        className="group/card relative flex h-full w-full flex-col justify-center gap-6 p-8 tablet:w-3/4 laptop:w-auto laptop:p-0 laptop:grid-in-[--pjId] laptop:hover:brightness-90"
         style={
           {
             "--pjId": pjId,
