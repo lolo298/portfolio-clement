@@ -13,7 +13,7 @@ export default function Header() {
         <FontAwesomeIcon icon={faBars} />
       </div>
       <div className="hidden gap-5 laptop:flex ">
-        <a href="/#AProposId">A propos</a>
+        <a href="/APropos">A propos</a>
         <a href="/#ProjetcsId">Projets</a>
         <Contact />
       </div>

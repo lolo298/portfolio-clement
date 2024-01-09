@@ -33,9 +33,11 @@ export default async function ProjectCard({
           </h3>
           <div className="flex flex-row gap-2">
             {tags.map((tag, i) => (
-              <Tag key={i}>{tag}</Tag>
+              <Tag style="squared" key={i}>
+                {tag}
+              </Tag>
             ))}
-            <Tag>{date}</Tag>
+            <Tag style="squared">{date}</Tag>
           </div>
         </div>
         <Image

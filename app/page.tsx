@@ -22,7 +22,7 @@ export default function Home() {
               quality={100}
             />
           </div>
-          <h2 className="relative w-full p-10 text-center text-3xl font-black uppercase tablet:text-7xl laptop:text-8xl desktop:-right-[15%] desktop:w-10/12">
+          <h2 className="relative w-full p-10 text-center text-3xl font-black uppercase tablet:text-7xl laptop:text-9xl desktop:-right-[15%] desktop:w-10/12">
             Bonjour, je suis Clément lascar Ux/ui designer
           </h2>
           <HomeBlob>Bonjour, je suis Clément lascar Ux/ui designer</HomeBlob>
@@ -39,7 +39,7 @@ export default function Home() {
           A propos
         </h3>
         <div className="laptop:flex-[4] ">
-          <p className="leading-8 text-black tablet:text-xl">
+          <p className="font-normal leading-8 text-black tablet:text-xl">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
             nec blandit massa, sit amet rutrum enim. Phasellus ullamcorper
             pellentesque elit facilisis scelerisque. Phasellus ullamcorper
@@ -51,7 +51,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <FlowingText>Lorem ipsum Dolor Sit Amet</FlowingText>
+      <FlowingText color="#000" style="outline">
+        Lorem ipsum Dolor Sit Amet
+      </FlowingText>
 
       <section
         id="ProjetcsId"

@@ -41,7 +41,7 @@ export default function HomeBlob({
     <>
       <h2
         id={titleId}
-        className="absolute left-0 top-0 w-full select-none bg-black p-10 text-center text-3xl font-black uppercase text-white [clip-path:url(#clip0)] tablet:text-7xl  laptop:text-8xl desktop:left-[15%] desktop:w-10/12 "
+        className="absolute left-0 top-0 w-full select-none bg-black p-10 text-center text-3xl font-black uppercase text-white [clip-path:url(#clip0)] tablet:text-7xl  laptop:text-9xl desktop:left-[15%] desktop:w-10/12 "
       >
         {children}
       </h2>
