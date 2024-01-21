@@ -3,4 +3,6 @@ export interface IProjectCard {
   tags: string[];
   date: string;
   image: string;
+  slug: string;
+  isOnMainPage: boolean;
 }

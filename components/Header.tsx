@@ -10,14 +10,7 @@ export default function Header() {
       <div className="flex w-8 items-center gap-4 tablet:w-10">
         <Image src="/logo.png" alt="Logo" width={30} height={30} />
       </div>
-      <div className="flex w-8 items-center gap-4 tablet:w-10 laptop:hidden">
-        <Menu />
-      </div>
-      <div className="hidden gap-5 laptop:flex ">
-        <a href="/APropos">A propos</a>
-        <a href="/#ProjetcsId">Projets</a>
-        <Contact />
-      </div>
+      <Menu />
     </header>
   );
 }

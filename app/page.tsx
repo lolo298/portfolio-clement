@@ -1,14 +1,21 @@
 import Arrows from "@/components/Arrows";
 import HomeBlob from "@/components/homeBlob";
 import Button from "@/components/Button";
-import { useId } from "react";
 import FlowingText from "@/components/FlowingText";
 import { IProjectCard } from "@/types/projects";
 import ProjectCard from "@/components/projects/ProjectCard";
-import projects from "@/app/projects";
 import Image from "next/image";
+import getProjects from "@/utils/getProjects";
 
-export default function Home() {
+export default async function Home() {
+  const projects = getProjects()
+    .filter((data) => data.isOnMainPage)
+    .reduce((acc, cur) => {
+      if (acc.length >= 5) return acc;
+      acc.push(cur);
+      return acc;
+    }, [] as IProjectCard[]);
+
   return (
     <>
       <section className="relative laptop:mb-[20vh] laptop:flex laptop:h-[70vh] laptop:items-center laptop:justify-center">

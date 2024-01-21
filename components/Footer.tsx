@@ -1,13 +1,14 @@
 import Image from "next/image";
 import projects from "@/app/projects";
 import { IProjectCard } from "@/types/projects";
+import getProjects from "@/utils/getProjects";
 
 export default function Footer() {
-  let projectsLinks: IProjectCard[] = [];
-
-  for (let i = 0; i < 3; i++) {
-    projectsLinks.push(projects[i]);
-  }
+  const projects = getProjects().reduce((acc, cur) => {
+    if (acc.length >= 3) return acc;
+    acc.push(cur);
+    return acc;
+  }, [] as IProjectCard[]);
 
   return (
     <footer className="m-auto flex justify-between px-8 py-4 text-black laptop:w-10/12 desktop:w-8/12">
@@ -28,8 +29,12 @@ export default function Footer() {
       </div>
       <div className="hidden flex-col justify-center tablet:flex">
         <h2 className="mb-8 text-2xl font-semibold">Projets</h2>
-        {projectsLinks.map((project) => (
-          <a key={project.title} href="#" className="underline">
+        {projects.map((project) => (
+          <a
+            key={project.title}
+            href={`projets/${project.slug}`}
+            className="underline"
+          >
             {project.title}
           </a>
         ))}

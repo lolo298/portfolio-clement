@@ -10,6 +10,7 @@ export default async function ProjectCard({
   tags,
   date,
   image,
+  slug,
   pjId,
 }: IProjectCard & { pjId?: string }) {
   const imageBuffer = await readFile(`public${image}`);
@@ -19,7 +20,8 @@ export default async function ProjectCard({
 
   return (
     <>
-      <div
+      <a
+        href={`/projets/${slug}`}
         className="group/card relative flex h-full w-full flex-col justify-center gap-6 p-8 tablet:w-3/4 laptop:w-auto laptop:p-0 laptop:grid-in-[--pjId] laptop:hover:brightness-90"
         style={
           {
@@ -49,7 +51,7 @@ export default async function ProjectCard({
           blurDataURL={base64}
           className="mt-4 tablet:w-full laptop:h-full laptop:w-full laptop:object-cover laptop:object-center"
         />
-      </div>
+      </a>
     </>
   );
 }

@@ -25,10 +25,20 @@ function Menu() {
   }, [isOpen]);
 
   return (
-    <div onClick={toggle}>
+    <>
       {isOpen ? (
         <>
-          <FontAwesomeIcon icon={faXmark} size="2xl" />
+          <div
+            className="flex w-8 items-center gap-4 tablet:w-10 laptop:hidden"
+            onClick={toggle}
+          >
+            <FontAwesomeIcon icon={faXmark} size="2xl" />
+          </div>
+          <div className="hidden gap-5 laptop:flex ">
+            <a href="/APropos">A propos</a>
+            <a href="/#ProjetcsId">Projets</a>
+            <button onClick={toggle}>Contact</button>
+          </div>
           {createPortal(
             <div className="absolute inset-0 flex h-screen w-screen flex-col items-center justify-center bg-bg/90">
               <div className="flex h-3/4 flex-col items-center gap-8 rounded-lg p-4 text-2xl text-primary">
@@ -69,9 +79,21 @@ function Menu() {
           )}
         </>
       ) : (
-        <FontAwesomeIcon icon={faBars} size="2xl" />
+        <>
+          <div
+            className="flex w-8 items-center gap-4 tablet:w-10 laptop:hidden"
+            onClick={toggle}
+          >
+            <FontAwesomeIcon icon={faBars} size="2xl" />
+          </div>
+          <div className="hidden gap-5 laptop:flex ">
+            <a href="/APropos">A propos</a>
+            <a href="/#ProjetcsId">Projets</a>
+            <button onClick={toggle}>Contact</button>
+          </div>
+        </>
       )}
-    </div>
+    </>
   );
 }
 

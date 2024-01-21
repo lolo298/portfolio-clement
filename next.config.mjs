@@ -1,7 +1,13 @@
 import withMDX from "@next/mdx";
 import withPlaiceholder from "@plaiceholder/next";
+import remarkFrontmatter from "remark-frontmatter";
 
-const withMDXFn = withMDX();
+const withMDXFn = withMDX({
+  options: {
+    remarkPlugins: [remarkFrontmatter],
+    rehypePlugins: [],
+  },
+});
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
