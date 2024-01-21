@@ -38,6 +38,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       />
     ),
     a: (props) => (
+      // @ts-ignore
       <Link
         className="text-base font-normal text-primary hover:underline tablet:text-xl"
         {...props}
