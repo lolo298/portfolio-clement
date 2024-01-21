@@ -1,8 +1,6 @@
 import { twMerge } from "tailwind-merge";
 import { createElement } from "react";
 
-type mixed = a | React.HTMLProps<HTMLButtonElement>;
-
 type a = { href: string } & React.HTMLProps<HTMLAnchorElement>;
 
 export default function Button({

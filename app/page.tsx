@@ -6,6 +6,7 @@ import { IProjectCard } from "@/types/projects";
 import ProjectCard from "@/components/projects/ProjectCard";
 import Image from "next/image";
 import getProjects from "@/utils/getProjects";
+import Link from "next/link";
 
 export default async function Home() {
   const projects = getProjects()
@@ -71,11 +72,14 @@ export default async function Home() {
         ))}
         <div className=" p-8 grid-in-txt laptop:p-0">
           <h3 className="text-2xl font-semibold uppercase text-black tablet:w-1/2 tablet:text-4xl">
-            Alors ces projets vous plaisent?
+            Vous voulez en voir plus
           </h3>
-          <a className="font-semibold uppercase underline tablet:text-2xl">
-            On échange !
-          </a>
+          <Link
+            href="/projets"
+            className="font-semibold uppercase underline tablet:text-2xl"
+          >
+            Par ici !
+          </Link>
         </div>
       </section>
     </>

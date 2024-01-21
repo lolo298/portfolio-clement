@@ -16,9 +16,6 @@ const nextConfig = {
   // Optionally, add any other Next.js config below
   distDir: "./build",
   output: "export",
-  experimental: {
-    typedRoutes: true,
-  },
   images: {
     unoptimized: true,
   },

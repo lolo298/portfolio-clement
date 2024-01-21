@@ -1,17 +1,18 @@
 import { IProjectCard } from "@/types/projects";
 import matter from "gray-matter";
 import path from "path";
-import fs from "fs";
+import { readFileSync, readdirSync } from "fs";
 
 export default function getProjects() {
-  const projects: IProjectCard[] = fs
-    .readdirSync(path.join(process.cwd(), "app/projets"), {
+  const projects: IProjectCard[] = readdirSync(
+    path.join(process.cwd(), "app/projets"),
+    {
       withFileTypes: true,
-    })
+    }
+  )
     .filter((dirent) => dirent.isDirectory())
     .map((dirent) => {
-      console.log(dirent.name);
-      const file = fs.readFileSync(
+      const file = readFileSync(
         path.join(process.cwd(), "app/projets", dirent.name, "page.mdx"),
         "utf-8"
       );

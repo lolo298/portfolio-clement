@@ -5,9 +5,9 @@ import {
   faChevronRight,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
-import { use, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { faChevronCircleRight } from "@fortawesome/free-solid-svg-icons/faChevronCircleRight";
+import Link from "next/link";
 
 function Menu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,14 +29,15 @@ function Menu() {
       {isOpen ? (
         <>
           <div
+            id="ContactToggle"
             className="flex w-8 items-center gap-4 tablet:w-10 laptop:hidden"
             onClick={toggle}
           >
             <FontAwesomeIcon icon={faXmark} size="2xl" />
           </div>
           <div className="hidden gap-5 laptop:flex ">
-            <a href="/APropos">A propos</a>
-            <a href="/#ProjetcsId">Projets</a>
+            <Link href="/APropos">A propos</Link>
+            <Link href="/projets">Projets</Link>
             <button onClick={toggle}>Contact</button>
           </div>
           {createPortal(
@@ -45,7 +46,7 @@ function Menu() {
                 <h2 className="text-center text-6xl font-black text-black">
                   Discutons.
                 </h2>
-                <a
+                <Link
                   href="https://www.linkedin.com/in/cl%C3%A9ment-lascar-a268aa252/"
                   className="group relative z-10 flex w-48 items-center"
                 >
@@ -58,7 +59,7 @@ function Menu() {
                     </span>
                   </span>
                   <span className="ml-14 group-hover:text-white">Linkedin</span>
-                </a>
+                </Link>
                 <a
                   href="mailto:clementlascar35@gmail.com"
                   className="group relative z-10 flex w-48 items-center"
@@ -82,13 +83,14 @@ function Menu() {
         <>
           <div
             className="flex w-8 items-center gap-4 tablet:w-10 laptop:hidden"
+            id="ContactToggle"
             onClick={toggle}
           >
             <FontAwesomeIcon icon={faBars} size="2xl" />
           </div>
           <div className="hidden gap-5 laptop:flex ">
-            <a href="/APropos">A propos</a>
-            <a href="/#ProjetcsId">Projets</a>
+            <Link href="/APropos">A propos</Link>
+            <Link href="/projets">Projets</Link>
             <button onClick={toggle}>Contact</button>
           </div>
         </>

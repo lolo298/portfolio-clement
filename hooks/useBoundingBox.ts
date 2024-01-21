@@ -1,4 +1,4 @@
-import { useState, useEffect, RefObject } from "react";
+import { useState, useEffect } from "react";
 
 export default function useBoundingBox(targetId: string) {
   const [boundingBox, setBoundingBox] = useState<DOMRect | null>(null);

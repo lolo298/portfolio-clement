@@ -1,4 +1,5 @@
 import type { MDXComponents } from "mdx/types";
+import Link from "next/link";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -33,6 +34,12 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     p: (props) => (
       <p
         className="group/p text-base font-normal text-black tablet:text-xl"
+        {...props}
+      />
+    ),
+    a: (props) => (
+      <Link
+        className="text-base font-normal text-primary hover:underline tablet:text-xl"
         {...props}
       />
     ),

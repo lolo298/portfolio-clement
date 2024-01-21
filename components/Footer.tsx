@@ -1,7 +1,7 @@
 import Image from "next/image";
-import projects from "@/app/projects";
 import { IProjectCard } from "@/types/projects";
 import getProjects from "@/utils/getProjects";
+import Link from "next/link";
 
 export default function Footer() {
   const projects = getProjects().reduce((acc, cur) => {
@@ -20,23 +20,23 @@ export default function Footer() {
         <a href="tel:+336 95 54 40 10" className="mb-8">
           06 95 54 40 10
         </a>
-        <a
+        <Link
           href="https://www.linkedin.com/in/cl%C3%A9ment-lascar-a268aa252/"
           className="w-max"
         >
           <Image src="/linkedin.png" alt="linkedin" width={25} height={25} />
-        </a>
+        </Link>
       </div>
       <div className="hidden flex-col justify-center tablet:flex">
         <h2 className="mb-8 text-2xl font-semibold">Projets</h2>
         {projects.map((project) => (
-          <a
+          <Link
             key={project.title}
             href={`projets/${project.slug}`}
             className="underline"
           >
             {project.title}
-          </a>
+          </Link>
         ))}
       </div>
     </footer>

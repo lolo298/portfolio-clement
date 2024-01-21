@@ -1,12 +1,6 @@
 import Arrows from "@/components/Arrows";
-import HomeBlob from "@/components/homeBlob";
 import Button from "@/components/Button";
-import { useId } from "react";
 import FlowingText from "@/components/FlowingText";
-import { IProjectCard } from "@/types/projects";
-import ProjectCard from "@/components/projects/ProjectCard";
-import projects from "@/app/projects";
-import Image from "next/image";
 import Tag from "@/components/projects/Tag";
 
 export default function Home() {
