@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${montserrat.className} bg-bg text-base text-primary`}>
         <Header />
-        <main className="flex flex-col items-center">{children}</main>
+        <main className="relative flex flex-col items-center">{children}</main>
         <Footer />
       </body>
     </html>

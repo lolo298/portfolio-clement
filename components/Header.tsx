@@ -2,6 +2,7 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import Contact from "./ContactPage";
+import Menu from "./Menu";
 
 export default function Header() {
   return (
@@ -10,7 +11,7 @@ export default function Header() {
         <Image src="/logo.png" alt="Logo" width={30} height={30} />
       </div>
       <div className="flex w-8 items-center gap-4 tablet:w-10 laptop:hidden">
-        <FontAwesomeIcon icon={faBars} />
+        <Menu />
       </div>
       <div className="hidden gap-5 laptop:flex ">
         <a href="/APropos">A propos</a>
