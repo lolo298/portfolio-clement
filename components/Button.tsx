@@ -1,5 +1,6 @@
 import { twMerge } from "tailwind-merge";
-import { createElement } from "react";
+import { Component, createElement } from "react";
+import Link from "next/link";
 
 type a = { href: string } & React.HTMLProps<HTMLAnchorElement>;
 
@@ -12,9 +13,9 @@ export default function Button({
   children: React.ReactNode;
   className?: string;
 } & (a | React.HTMLProps<HTMLButtonElement>)) {
-  let type = "button";
+  let type: any = "button";
   if (href) {
-    type = "a";
+    type = Link;
   }
 
   return createElement(

@@ -32,7 +32,9 @@ export default function Home() {
           </p>
           <div className="flex flex-col tablet:flex-row tablet:gap-12">
             <Arrows />
-            <Button className="m-auto w-3/5 tablet:flex-1">Mon CV</Button>
+            <Button className="m-auto w-3/5 tablet:flex-1" href="/CV.pdf">
+              Mon CV
+            </Button>
           </div>
         </div>
       </section>

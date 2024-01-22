@@ -42,6 +42,16 @@ const config: Config = {
           "pj-4 pj-4 pj-4 empty-7 empty-7 pj-5",
           "txt txt txt empty-7 empty-7 pj-5",
         ],
+        test: [
+          "empty-1 empty-1 pj-1 pj-1 pj-1 pj-1",
+          "pj-2 empty-2 pj-1 pj-1 pj-1 pj-1",
+          "pj-2 empty-3 empty-3 empty-3 empty-5 empty-5",
+          "pj-2 empty-3 empty-3 empty-3 pj-3 pj-3",
+          "empty-4 empty-3 empty-3 empty-3 pj-3 pj-3",
+          "pj-4 pj-4 pj-4 empty-6 pj-3 pj-3",
+          "pj-4 pj-4 pj-4 empty-7 empty-7 empty-7",
+          "pj-4 pj-4 pj-4 empty-7 empty-7 empty-7",
+        ],
       },
       gridTemplateColumns: {
         // masonry: "5fr 2fr 2fr 2fr 1fr 5fr",
@@ -50,6 +60,7 @@ const config: Config = {
       gridTemplateRows: {
         // masonry: "3fr 7fr 2fr 5fr 2fr 4fr 2fr 5fr 3fr 1fr 4fr",
         masonry: "8% 21% 3% 15% 5% 20% 5% 2% 20%",
+        test: "8% 21% 3% 15% 5% 20% 5% 2%",
       },
     },
     screens: {

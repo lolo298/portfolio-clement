@@ -55,7 +55,9 @@ export default async function Home() {
           </p>
           <div className="flex w-full flex-col justify-center p-8 tablet:flex-row tablet:justify-between tablet:gap-12">
             <Arrows />
-            <Button className="tablet:flex-1">En savoir plus</Button>
+            <Button className="tablet:flex-1" href="/APropos">
+              En savoir plus
+            </Button>
           </div>
         </div>
       </section>

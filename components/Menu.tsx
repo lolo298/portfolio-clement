@@ -20,8 +20,12 @@ function Menu() {
   }, []);
 
   useEffect(() => {
-    if (isOpen) document.body.classList.add("overflow-hidden");
-    else document.body.classList.remove("overflow-hidden");
+    if (isOpen) {
+      document.body.classList.add("overflow-hidden");
+      window.scrollTo(0, 0);
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
   }, [isOpen]);
 
   return (
@@ -30,22 +34,36 @@ function Menu() {
         <>
           <div
             id="ContactToggle"
-            className="flex w-8 items-center gap-4 tablet:w-10 laptop:hidden"
+            className="flex w-8 items-center gap-4 bg-bg tablet:w-10 laptop:hidden"
             onClick={toggle}
           >
             <FontAwesomeIcon icon={faXmark} size="2xl" />
           </div>
           <div className="hidden gap-5 laptop:flex ">
-            <Link href="/APropos">A propos</Link>
-            <Link href="/projets">Projets</Link>
-            <button onClick={toggle}>Contact</button>
+            <Link href="/APropos" className="hover:font-bold">
+              A propos
+            </Link>
+            <Link href="/projets" className="hover:font-bold">
+              Projets
+            </Link>
+            <button onClick={toggle} className="hover:font-bold">
+              Contact
+            </button>
           </div>
           {createPortal(
             <div className="absolute inset-0 flex h-screen w-screen flex-col items-center justify-center bg-bg/90">
-              <div className="flex h-3/4 flex-col items-center gap-8 rounded-lg p-4 text-2xl text-primary">
+              <div className="relative flex h-3/4 flex-col items-center gap-8 rounded-lg p-4 text-2xl text-primary">
                 <h2 className="text-center text-6xl font-black text-black">
                   Discutons.
                 </h2>
+                <div className="absolute right-0 top-0 hidden -translate-y-full translate-x-full laptop:block">
+                  <FontAwesomeIcon
+                    icon={faXmark}
+                    size="2xl"
+                    onClick={toggle}
+                    className="cursor-pointer hover:text-primary"
+                  />
+                </div>
                 <Link
                   href="https://www.linkedin.com/in/cl%C3%A9ment-lascar-a268aa252/"
                   className="group relative z-10 flex w-48 items-center"
@@ -82,16 +100,22 @@ function Menu() {
       ) : (
         <>
           <div
-            className="flex w-8 items-center gap-4 tablet:w-10 laptop:hidden"
+            className="flex w-8 items-center gap-4 bg-bg tablet:w-10 laptop:hidden"
             id="ContactToggle"
             onClick={toggle}
           >
             <FontAwesomeIcon icon={faBars} size="2xl" />
           </div>
           <div className="hidden gap-5 laptop:flex ">
-            <Link href="/APropos">A propos</Link>
-            <Link href="/projets">Projets</Link>
-            <button onClick={toggle}>Contact</button>
+            <Link href="/APropos" className="hover:font-bold">
+              A propos
+            </Link>
+            <Link href="/projets" className="hover:font-bold">
+              Projets
+            </Link>
+            <button onClick={toggle} className="hover:font-bold">
+              Contact
+            </button>
           </div>
         </>
       )}

@@ -3,6 +3,8 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
+const speed = process.env.NEXT_PUBLIC_ARROW_SPEED ?? 500;
+
 export default function Arrows({ className }: { className?: string }) {
   const [arrows, setArrows] = useState<string[]>([]);
   const len = 3;
@@ -20,7 +22,7 @@ export default function Arrows({ className }: { className?: string }) {
       newArrows[current] = "/arrows/default.svg";
       newArrows[next] = `/arrows/${next + 1}.png`;
       setArrows(newArrows);
-    }, 1000);
+    }, speed);
     return () => clearTimeout(timeout);
   }, [arrows]);
 
