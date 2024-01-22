@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
-const speed = process.env.NEXT_PUBLIC_ARROW_SPEED ?? 500;
+const speed = parseInt(process.env.NEXT_PUBLIC_ARROW_SPEED ?? "500");
 
 export default function Arrows({ className }: { className?: string }) {
   const [arrows, setArrows] = useState<string[]>([]);
