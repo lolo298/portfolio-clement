@@ -1,6 +1,7 @@
 "use client";
 import useBoundingBox from "@/hooks/useBoundingBox";
 import { useEffect, useId, useState } from "react";
+import { Parallax } from "react-scroll-parallax";
 
 export default function FlowingText({
   children,
@@ -17,33 +18,35 @@ export default function FlowingText({
   const box = useBoundingBox(id);
 
   return (
-    <div
-      className={`"bg-white relative my-14 flex w-full overflow-hidden whitespace-nowrap text-7xl font-black uppercase ${
-        style === "outline" ? "text-bg" : "text-[--color]"
-      }
+    <Parallax speed={-30} className="-z-20">
+      <div
+        className={`"bg-white relative my-14 flex w-screen overflow-hidden whitespace-nowrap text-7xl font-black uppercase ${
+          style === "outline" ? "text-bg" : "text-[--color]"
+        }
       tablet:text-9xl laptop:text-10xl`}
-      style={
-        {
-          "--move": `-${box?.width}px`,
-          "--duration": `${duration}s`,
-          "--color": color,
-        } as React.CSSProperties
-      }
-    >
-      <span
-        id={id}
-        className="box-border animate-flowing-text 
-           [animation-duration:--duration] [text-shadow:_1px_1px_0_var(--color),_-1px_-1px_0_var(--color),_1px_-1px_0_var(--color),_-1px_1px_0_var(--color),_1px_1px_0_var(--color)]"
+        style={
+          {
+            "--move": `-${box?.width}px`,
+            "--duration": `${duration}s`,
+            "--color": color,
+          } as React.CSSProperties
+        }
       >
-        {children}&nbsp;
-      </span>
-      <span
-        id={id}
-        className="box-border animate-flowing-text 
+        <span
+          id={id}
+          className="box-border animate-flowing-text 
            [animation-duration:--duration] [text-shadow:_1px_1px_0_var(--color),_-1px_-1px_0_var(--color),_1px_-1px_0_var(--color),_-1px_1px_0_var(--color),_1px_1px_0_var(--color)]"
-      >
-        {children}&nbsp;
-      </span>
-    </div>
+        >
+          {children}&nbsp;
+        </span>
+        <span
+          id={id}
+          className="box-border animate-flowing-text 
+           [animation-duration:--duration] [text-shadow:_1px_1px_0_var(--color),_-1px_-1px_0_var(--color),_1px_-1px_0_var(--color),_-1px_1px_0_var(--color),_1px_1px_0_var(--color)]"
+        >
+          {children}&nbsp;
+        </span>
+      </div>
+    </Parallax>
   );
 }

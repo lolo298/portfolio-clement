@@ -23,6 +23,7 @@
     "next": "14.0.3",
     "react": "^18",
     "react-dom": "^18",
+    "react-scroll-parallax": "^3.4.5",
     "remark-frontmatter": "^5.0.0",
     "tailwind-merge": "^2.1.0"
   },
