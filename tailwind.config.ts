@@ -10,7 +10,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: "#F0F0F0",
+        bg: {
+          DEFAULT: "#F0F0F0",
+          dark: "#1E1E1E",
+        },
         primary: {
           light: "#0B30FE",
           DEFAULT: "#011ECB",
@@ -42,7 +45,7 @@ const config: Config = {
           "pj-4 pj-4 pj-4 empty-7 empty-7 pj-5",
           "txt txt txt empty-7 empty-7 pj-5",
         ],
-        test: [
+        projects: [
           "empty-1 empty-1 pj-1 pj-1 pj-1 pj-1",
           "pj-2 empty-2 pj-1 pj-1 pj-1 pj-1",
           "pj-2 empty-3 empty-3 empty-3 empty-5 empty-5",
@@ -60,7 +63,7 @@ const config: Config = {
       gridTemplateRows: {
         // masonry: "3fr 7fr 2fr 5fr 2fr 4fr 2fr 5fr 3fr 1fr 4fr",
         masonry: "8% 21% 3% 15% 5% 20% 5% 2% 20%",
-        test: "8% 21% 3% 15% 5% 20% 5% 2%",
+        projects: "8% 21% 3% 15% 5% 20% 5% 2%",
       },
     },
     screens: {

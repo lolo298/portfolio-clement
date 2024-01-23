@@ -18,7 +18,7 @@ export default function FlowingText({
   const box = useBoundingBox(id);
 
   return (
-    <Parallax speed={-30} className="-z-20">
+    <Parallax speed={-10} className="-z-20">
       <div
         className={`"bg-white relative my-14 flex w-screen overflow-hidden whitespace-nowrap text-7xl font-black uppercase ${
           style === "outline" ? "text-bg" : "text-[--color]"
