@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Installation
 
-## Getting Started
+## Prérequis
 
-First, run the development server:
+Avoir installer Node v20.\* [nodejs.org](https://nodejs.org/en/)
+
+## Installation
+
+Ouvrir un terminal dans le dossier du projet et lancer la commande suivante :
+
+```bash
+npm install
+```
+
+# Lancement
+
+## Lancement en mode Debug
+
+Ouvrir un terminal dans le dossier du projet et lancer la commande suivante :
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Cette commande va créer un serveur de développement a l'adresse suivante : [localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Build
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Pour récuperer les fichiers builds a envoyer sur le serveur en production, lancer la commande suivante :
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Les fichiers builds seront dans le dossier [build](./build)
+Tous les fichiers sonts nécessaires pour le bon fonctionnement du site.

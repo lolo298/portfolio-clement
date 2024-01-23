@@ -22,11 +22,8 @@ function Contact({ close }: { close: () => void }) {
       {createPortal(
         <div className="absolute inset-0 z-50 flex h-screen w-screen flex-col items-center bg-bg/90">
           <div className="relative flex h-4/5 flex-col items-center justify-center gap-20 rounded-lg p-4 text-2xl text-black">
-            <div className="relative">
-              <h2 className="text-center text-4xl font-black text-black tablet:text-6xl">
-                Discutons.
-              </h2>
-              <div className="absolute inset-y-0 -right-4 flex translate-x-full items-center justify-center">
+            <div>
+              <div className="my-4 flex items-center justify-center">
                 <FontAwesomeIcon
                   icon={faXmark}
                   size="xl"
@@ -34,6 +31,9 @@ function Contact({ close }: { close: () => void }) {
                   className="cursor-pointer"
                 />
               </div>
+              <h2 className="text-center text-4xl font-black text-black tablet:text-6xl">
+                Discutons.
+              </h2>
             </div>
             <Link
               href="https://www.linkedin.com/in/cl%C3%A9ment-lascar-a268aa252/"
