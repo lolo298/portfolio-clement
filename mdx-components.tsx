@@ -1,5 +1,6 @@
 import type { MDXComponents } from "mdx/types";
 import Link from "next/link";
+import Carrousel from "./components/Carrousel";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -44,6 +45,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {...props}
       />
     ),
+    Carrousel: (props) => <Carrousel {...props} />,
     ...components,
   };
 }

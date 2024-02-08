@@ -54,7 +54,7 @@ export default function HomeBlob({
           xmlns="http://www.w3.org/2000/svg"
         >
           <clipPath id="clip0" clipPathUnits="userSpaceOnUse">
-            <path
+            {/* <path
               fill="black"
               d="M97.1 -97.1C122.1 -72.1 136.1 -36.1 153.4 17.3C170.7 70.7 191.4 141.4 166.4 179.3C141.4 217.1 70.7 222 4.1 217.9C-62.5 213.8 -124.9 200.6 -156.1 162.8C-187.3 124.9 -187.1 62.5 -182.3 4.8C-177.5 -52.8 -167.9 -105.6 -136.8 -130.6C-105.6 -155.6 -52.8 -152.8 -8.4 -144.4C36.1 -136.1 72.1 -122.1 97.1 -97.1"
               className="md:scale-[.25] translate-x-[--moveX] translate-y-[--moveY] scale-[.35] tablet:scale-50 laptop:scale-[.6]"
@@ -65,7 +65,7 @@ export default function HomeBlob({
                 } as React.CSSProperties
               }
             >
-              {/* @ts-ignore */}
+              
               <animate
                 attributeName="d"
                 values="
@@ -77,7 +77,7 @@ export default function HomeBlob({
                 dur={`${duration}s`}
                 repeatCount="indefinite"
               />
-            </path>
+            </path> */}
           </clipPath>
         </svg>
       </div>
