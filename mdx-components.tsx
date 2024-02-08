@@ -29,8 +29,20 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {...props}
       />
     ),
-    Wrapper: (props) => (
-      <div className="flex flex-col gap-4 p-4 laptop:flex-row" {...props} />
+    Wrapper: ({ children, ...rest }) => (
+      <div className="grid grid-flow-row grid-cols-4 gap-4 " {...rest}>
+        {children.map((child: any, index: number) => {
+          const i = index + 1;
+          return (
+            <div key={index} className="">
+              <h2 className="text-2xl font-bold text-primary tablet:text-4xl">
+                {i.toString().padStart(2, "0")}.
+              </h2>
+              {child}
+            </div>
+          );
+        })}
+      </div>
     ),
     p: (props) => (
       <p
