@@ -1,6 +1,6 @@
+import Carrousel from "./components/Carrousel";
 import type { MDXComponents } from "mdx/types";
 import Link from "next/link";
-import Carrousel from "./components/Carrousel";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -12,30 +12,39 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     h2: (props) => (
       <h2
-        className="text-2xl font-bold text-primary tablet:text-4xl"
+        className="whitespace-nowrap text-base font-bold text-primary tablet:text-base"
         {...props}
       />
     ),
     Tag: (props) => (
       <span className="text-2xl font-bold text-black" {...props} />
     ),
-    Header: (props) => <div className="p-16" {...props} />,
+    Header: (props) => <div className="m-auto p-16" {...props} />,
     Tags: (props) => <div className="flex flex-wrap gap-2" {...props} />,
     img: (props) => <img className="w-full" {...props} />,
-    MainImg: (props) => <div className="w-screen" {...props} />,
+    MainImg: (props) => <div className="w-screen py-16" {...props} />,
     Content: (props) => (
       <div
         className="flex w-full flex-col items-center gap-4 p-16"
         {...props}
       />
     ),
-    Wrapper: ({ children, ...rest }) => (
-      <div className="grid grid-flow-row grid-cols-4 gap-4 " {...rest}>
+    Wrapper: (props) => (
+      <div
+        className="flex w-2/3 flex-col gap-4 py-4 laptop:flex-col"
+        {...props}
+      />
+    ),
+    Grille: ({ children, ...rest }) => (
+      <div
+        className="grid w-2/3 w-2/3 grid-flow-row grid-cols-2 gap-12 pb-20 tablet:grid-cols-4"
+        {...rest}
+      >
         {children.map((child: any, index: number) => {
           const i = index + 1;
           return (
             <div key={index} className="">
-              <h2 className="text-2xl font-bold text-primary tablet:text-4xl">
+              <h2 className="text-regular tablet:text-regular font-bold text-primary">
                 {i.toString().padStart(2, "0")}.
               </h2>
               {child}
