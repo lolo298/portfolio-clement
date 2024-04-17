@@ -5,14 +5,14 @@ import Link from "next/link";
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     h1: (props) => (
-      <h1
-        className="my-2 text-4xl font-bold text-black desktop:text-8xl"
-        {...props}
-      />
+      <h1 className="my-2 text-4xl font-bold text-black" {...props} />
     ),
     h2: (props) => (
-      <h2
-        className="whitespace-nowrap text-base font-bold text-primary tablet:text-base"
+      <h2 className="whitespace-nowrap font-semibold text-black" {...props} />
+    ),
+    h3: (props) => (
+      <h3
+        className="whitespace-nowrap text-xl font-black text-primary"
         {...props}
       />
     ),
@@ -23,9 +23,19 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Tags: (props) => <div className="flex flex-wrap gap-2" {...props} />,
     img: (props) => <img className="w-full" {...props} />,
     MainImg: (props) => <div className="w-screen py-16" {...props} />,
-    Content: (props) => (
+    MainContent: (props) => (
       <div
-        className="flex w-full flex-col items-center gap-4 p-16"
+        className="flex w-full items-center gap-4 px-16 py-8  text-2xl font-normal"
+        {...props}
+      />
+    ),
+    Content: (props) => (
+      <div className="flex w-full flex-col gap-4 p-16" {...props} />
+    ),
+    Aside: (props) => (
+      <aside
+        className="flex w-1/3 flex-col gap-4 p-16"
+        style={{ height: "fit-content" }}
         {...props}
       />
     ),
@@ -67,6 +77,63 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       />
     ),
     Carrousel: (props) => <Carrousel {...props} />,
+    Line: ({ date, sub, children, ...rest }) => (
+      <div className="flex justify-between text-black" {...rest}>
+        <div className="flex flex-col">
+          <span className="text-4xl font-normal">{children}</span>
+          <span className="text-2xl font-medium">{sub}</span>
+        </div>
+        <div className="text-2xl font-normal">{date}</div>
+      </div>
+    ),
+    Bar: ({ content, ...props }) => (
+      <div
+        className="my-8 flex h-32 w-full flex-col justify-between"
+        {...props}
+      >
+        <div id="top" className="flex items-center justify-between">
+          <div className="h-1 w-2/5 bg-primary-light"></div>
+          <div className="h-8 w-8 bg-primary-light"></div>
+          <div className="h-1 w-2/5 bg-primary-light"></div>
+        </div>
+        <div className="flex items-center justify-around">
+          {content.map((val: string) => (
+            <span className="text-xl font-bold">{val}</span>
+          ))}
+        </div>
+        <div id="bottom" className="h-1 w-full bg-primary-light"></div>
+      </div>
+    ),
+    Categories: ({ children, ...rest }) => (
+      <div
+        className="flex w-full flex-col items-center gap-4 p-16 text-2xl font-normal"
+        {...rest}
+      >
+        {children}
+      </div>
+    ),
+
+    Categorie: ({ title, children, ...rest }) => (
+      <div className="w-full" {...rest}>
+        <h4 className="mb-4 text-2xl font-normal text-black">{title}</h4>
+        <div className="mb-8 flex flex-nowrap gap-4">{children}</div>
+      </div>
+    ),
+    Card: ({ title, name, img, children, center, ...rest }) => (
+      <div
+        className={`flex flex-grow flex-col rounded-lg border-2 border-slate-300 p-4 text-xs text-black ${
+          center && "items-center text-center"
+        }`}
+        {...rest}
+      >
+        {img && <img src={img} className="size-24 object-cover" />}
+        {name && <h5 className="font-semibold text-primary">{name}</h5>}
+        <h6 className="font-semibold ">{title}</h6>
+        <p className="font-normal"></p>
+        {children}
+      </div>
+    ),
+
     ...components,
   };
 }
