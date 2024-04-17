@@ -1,98 +1,222 @@
 import Arrows from "@/components/Arrows";
 import Button from "@/components/Button";
-import FlowingText from "@/components/FlowingText";
+import FlowingBar from "@/components/FlowingBar";
 import Tag from "@/components/projects/Tag";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <>
-      <section className="flex flex-col gap-6 p-8 text-black laptop:p-16 desktop:w-3/4">
-        <p className=" font-semibold">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          nec blandit massa.
-        </p>
-        <p className="text-3xl font-bold laptop:text-5xl">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          nec blandit massa, sit amet.
-        </p>
-      </section>
-      <FlowingText style="full" color="#011ECB">
-        Lorem ipsum Dolor Sit Amet
-      </FlowingText>
-      <section className="flex flex-col gap-4 p-8 tablet:w-2/3 laptop:w-11/12 laptop:flex-row desktop:w-2/3">
-        <h2 className="text-2xl font-black tablet:text-4xl laptop:flex-[3]">
-          Biographie
-        </h2>
-        <div className="laptop:flex-[4]">
-          <p className="mb-4 font-normal text-black tablet:text-xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            nec blandit massa, sit amet rutrum enim. Phasellus ullamcorper
-            pellentesque elit facilisis scelerisque. Phasellus ullamcorper
-            pellentesque elit .
-          </p>
-          <div className="flex flex-col tablet:flex-row tablet:gap-12">
-            <Arrows />
-            <Button className="m-auto w-3/5 tablet:flex-1" href="/CV.pdf">
-              Mon CV
-            </Button>
-          </div>
-        </div>
-      </section>
-      <section className="flex w-full flex-col gap-4 p-16 tablet:w-2/3 laptop:w-11/12 laptop:flex-row desktop:w-2/3">
-        <h2 className="text-4xl font-black laptop:flex-[3]">Expérience</h2>
-        <div className="flex flex-col gap-8 font-normal text-black laptop:flex-[4]">
-          <div>
-            <h3 className="text-2xl tablet:text-4xl">MMB</h3>
-            <p className="tablet:text-xl">
-              UX/UI designer en alternance - <br className="tablet:hidden" />
-              2022-2023
+      <div className="flex w-full flex-col items-start">
+        <div className="flex w-full flex-col gap-4 px-4 py-8 text-2xl font-normal tablet:flex-row  tablet:items-center tablet:px-16">
+          <div className="flex w-full flex-col gap-4">
+            <h1 className="my-2 text-4xl font-bold text-black">Title</h1>
+            <p className="group/p text-base font-normal text-black tablet:text-xl">
+              lorem ipsum dolor sit amet, consectetur adipiscing elit sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
           </div>
-          <div>
-            <h3 className="text-2xl tablet:text-4xl">MMB</h3>
-            <p className="tablet:text-xl">
-              UX/UI designer en alternance - <br className="tablet:hidden" />
-              2022-2023
+          <aside
+            className="flex flex-col gap-4 tablet:w-1/3"
+            style={{ height: "fit-content" }}
+          >
+            <h2 className="whitespace-nowrap font-semibold text-black">
+              Title
+            </h2>
+            <p className="group/p text-base font-normal text-black tablet:text-xl">
+              My content
             </p>
-          </div>
-          <div>
-            <h3 className="text-2xl tablet:text-4xl">MMB</h3>
-            <p className="tablet:text-xl">
-              UX/UI designer en alternance - <br className="tablet:hidden" />
-              2022-2023
+
+            <h2 className="whitespace-nowrap font-semibold text-black">
+              Title
+            </h2>
+            <p className="group/p text-base font-normal text-black tablet:text-xl">
+              My content
             </p>
-          </div>
+          </aside>
         </div>
-      </section>
-      <section className="flex w-full flex-col gap-4 p-16 tablet:w-2/3 laptop:w-11/12 laptop:flex-row desktop:w-2/3">
-        <h2 className="text-4xl font-black laptop:flex-[3]">Compétences</h2>
-        <div className="flex flex-col gap-4 laptop:flex-[4]">
-          <div className="flex flex-col gap-4">
-            <h3 className="text-2xl font-normal text-black">Général</h3>
-            <div className="flex gap-2">
-              <Tag style="rounded">UX/UI</Tag>
-              <Tag style="rounded">UX/UI</Tag>
-              <Tag style="rounded">UX/UI</Tag>
-            </div>
-          </div>
-          <div className="flex flex-col gap-4">
-            <h3 className="text-2xl font-normal text-black">Design</h3>
-            <div className="flex gap-2">
-              <Tag style="rounded">UX/UI</Tag>
-              <Tag style="rounded">UX/UI</Tag>
-              <Tag style="rounded">UX/UI</Tag>
-            </div>
-          </div>
-          <div className="flex flex-col gap-4">
-            <h3 className="text-2xl font-normal text-black">Technique</h3>
-            <div className="flex gap-2">
-              <Tag style="rounded">UX/UI</Tag>
-              <Tag style="rounded">UX/UI</Tag>
-              <Tag style="rounded">UX/UI</Tag>
-            </div>
-          </div>
+        <FlowingBar color="#000">Lorem</FlowingBar>
+        <Categories>
+          <Categorie title="Lorem">
+            <Card title="card title">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </Card>
+            <Card title="card title">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </Card>
+            <Card title="card title">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </Card>
+          </Categorie>
+          <Categorie title="Lorem">
+            <Card
+              title="card title"
+              name="Name"
+              img="https://placehold.co/400"
+              center
+            >
+              Lorem ipsum
+            </Card>
+            <Card
+              title="card title"
+              name="Name"
+              img="https://placehold.co/400"
+              center
+            >
+              Lorem ipsum
+            </Card>
+            <Card
+              title="card title"
+              name="Name"
+              img="https://placehold.co/400"
+              center
+            >
+              Lorem ipsum
+            </Card>
+            <Card
+              title="card title"
+              name="Name"
+              img="https://placehold.co/400"
+              center
+            >
+              Lorem ipsum
+            </Card>
+            <Card
+              title="card title"
+              name="Name"
+              img="https://placehold.co/400"
+              center
+            >
+              Lorem ipsum
+            </Card>
+          </Categorie>
+          <Categorie title="Lorem">
+            <Card title="card title" img="https://placehold.co/400" center />
+            <Card title="card title" img="https://placehold.co/400" center />
+            <Card title="card title" img="https://placehold.co/400" center />
+            <Card title="card title" img="https://placehold.co/400" center />
+            <Card title="card title" img="https://placehold.co/400" center />
+          </Categorie>
+        </Categories>
+        <div className="flex w-full flex-col gap-4 px-4 py-8 text-2xl font-normal tablet:px-16">
+          <h3 className="whitespace-nowrap text-xl font-black text-primary">
+            Title
+          </h3>
+          <Line date="2023-2024" sub="subtitle">
+            Title
+          </Line>
+          <Line date="2023-2024" sub="subtitle">
+            Title
+          </Line>
+          <Line date="2023-2024" sub="subtitle">
+            Title
+          </Line>
+          <br />
+          <br />
+          <h3 className="whitespace-nowrap text-xl font-black text-primary">
+            Title
+          </h3>
+          <Line date="2023-2024" sub="subtitle">
+            Title
+          </Line>
+          <Line date="2023-2024" sub="subtitle">
+            Title
+          </Line>
+          <Line date="2023-2024" sub="subtitle">
+            Title
+          </Line>
         </div>
-      </section>
+      </div>
     </>
+  );
+}
+
+function Categories({ children, ...rest }: { children: any }) {
+  return (
+    <div
+      className="flex w-full flex-col items-center gap-4 p-8 text-2xl font-normal tablet:p-16"
+      {...rest}
+    >
+      {children}
+    </div>
+  );
+}
+
+function Categorie({
+  title,
+  children,
+  ...rest
+}: {
+  title: string;
+  children: any;
+}) {
+  return (
+    <div className="w-full" {...rest}>
+      <h4 className="mb-4 text-2xl font-normal text-black">{title}</h4>
+      <div className="mb-8 flex flex-wrap gap-4 tablet:flex-nowrap">
+        {children}
+      </div>
+    </div>
+  );
+}
+
+type CardProps = {
+  title: string;
+  name?: string;
+  img?: string;
+  children?: any;
+  center?: boolean;
+};
+
+function Card({
+  title,
+  name,
+  img,
+  children = null,
+  center = false,
+  ...rest
+}: CardProps) {
+  return (
+    <div
+      className={`flex flex-grow flex-col rounded-lg border-2 border-slate-300 p-4 text-xs text-black ${
+        center && "items-center text-center"
+      }`}
+      {...rest}
+    >
+      {img && (
+        <div className="relative size-24">
+          <Image alt={title || ""} src={img} fill />
+        </div>
+      )}
+      {name && <h5 className="font-semibold text-primary">{name}</h5>}
+      <h6 className="font-semibold">{title}</h6>
+      <p className="font-normal">{children}</p>
+    </div>
+  );
+}
+
+function Line({
+  date,
+  sub,
+  children,
+  ...rest
+}: {
+  date: string;
+  sub: string;
+  children: any;
+}) {
+  return (
+    <div className="flex w-full justify-between text-black" {...rest}>
+      <div className="flex flex-col">
+        <span className="text-4xl font-normal">{children}</span>
+        <span className="text-2xl font-medium">{sub}</span>
+      </div>
+      <div className="text-2xl font-normal">{date}</div>
+    </div>
   );
 }

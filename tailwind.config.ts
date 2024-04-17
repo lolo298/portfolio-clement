@@ -32,6 +32,7 @@ const config: Config = {
       },
       spacing: {
         image: "64rem",
+        "screen-2w": "200vw",
       },
       animation: {
         "flowing-text": "flowing-text 20s linear infinite",
