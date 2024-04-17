@@ -4,7 +4,6 @@ import path from "path";
 import { readFileSync, readdirSync } from "fs";
 
 export default function getProjects() {
-  console.log("getProjects");
   const projects: IProjectCard[] = readdirSync(
     path.join(process.cwd(), "app/projets"),
     {
