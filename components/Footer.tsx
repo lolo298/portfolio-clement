@@ -32,7 +32,7 @@ export default function Footer() {
         {projects.map((project) => (
           <Link
             key={project.title}
-            href={`projets/${project.slug}`}
+            href={`/projets/${project.slug}`}
             className="underline"
           >
             {project.title}
