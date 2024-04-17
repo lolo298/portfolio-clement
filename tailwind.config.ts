@@ -30,6 +30,9 @@ const config: Config = {
       width: {
         "13": "3.25rem",
       },
+      spacing: {
+        image: "64rem",
+      },
       animation: {
         "flowing-text": "flowing-text 20s linear infinite",
       },

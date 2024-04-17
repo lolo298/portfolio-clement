@@ -48,12 +48,12 @@ export default async function Home() {
         </h3>
         <div className="laptop:flex-[4] ">
           <p className="font-normal leading-8 text-black tablet:text-xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            nec blandit massa, sit amet rutrum enim. Phasellus ullamcorper
-            pellentesque elit facilisis scelerisque. Phasellus ullamcorper
-            pellentesque elit .
+            Lorem ipsum dolor'' sit amet, consectetur adipiscing elit.
+            Suspendisse nec blandit massa, sit amet rutrum enim. Phasellus
+            ullamcorper pellentesque elit facilisis scelerisque. Phasellus
+            ullamcorper pellentesque elit .
           </p>
-          <div className="flex w-full flex-col justify-center p-8 tablet:flex-row tablet:justify-between tablet:gap-12">
+          <div className="flex w-full flex-col items-center justify-center p-8 tablet:flex-row tablet:justify-between tablet:gap-12">
             <Arrows />
             <Button className="tablet:flex-1" href="/APropos">
               En savoir plus

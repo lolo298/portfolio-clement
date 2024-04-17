@@ -29,7 +29,7 @@ export default function Arrows({ className }: { className?: string }) {
   return (
     <div
       className={twMerge(
-        "flex justify-around tablet:flex-[2] tablet:justify-between",
+        "flex h-16 justify-around gap-16 tablet:flex-[2] tablet:justify-between",
         className
       )}
     >

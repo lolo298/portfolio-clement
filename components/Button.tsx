@@ -24,7 +24,7 @@ export default function Button({
       ...rest,
       href,
       className: twMerge(
-        "bg-[url('/buttonBlob.svg')] h-full bg-[size:400%_100%] bg-center bg-no-repeat p-4 font-semibold text-white text-center",
+        "bg-[url('/buttonBlob.svg')] h-full bg-[size:400%_100%] flex justify-center items-center w-60 h-32 bg-center bg-no-repeat p-4 font-semibold text-white text-center",
         className
       ),
     },

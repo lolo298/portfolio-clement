@@ -42,60 +42,67 @@ function Carrousel({
   }, [delay, elem]);
 
   return (
-    <div className={twMerge("relative w-2/3", className)}>
-      <div className="group absolute inset-y-0 left-0 right-3/4">
-        <div
-          onClick={() => {
-            if (elem.current) {
-              if (currentImg.current <= 1) {
-                elem.current.scrollTo({
-                  left: elem.current.scrollWidth,
-                  behavior: "smooth",
-                });
-                currentImg.current = elem.current.children.length;
-              } else {
-                elem.current.scrollBy({
-                  left: -elem.current.clientWidth,
-                  behavior: "smooth",
-                });
-              }
-              currentImg.current--;
+    <div
+      className={twMerge(
+        "relative flex w-2/3 items-center justify-center gap-4",
+        className
+      )}
+    >
+      <div
+        onClick={() => {
+          if (elem.current) {
+            if (currentImg.current <= 1) {
+              elem.current.scrollTo({
+                left: elem.current.scrollWidth,
+                behavior: "smooth",
+              });
+              currentImg.current = elem.current.children.length;
+            } else {
+              elem.current.scrollBy({
+                left: -elem.current.clientWidth,
+                behavior: "smooth",
+              });
             }
-          }}
-          className="hidden h-full cursor-pointer items-center justify-center bg-gradient-to-r from-black/50 to-black/0 group-hover:flex"
-        >
-          <FontAwesomeIcon icon={faChevronLeft} className="h-12 text-white" />
-        </div>
-      </div>
-      <div className="group absolute inset-y-0 left-3/4 right-0">
-        <div
-          onClick={() => {
-            if (elem.current) {
-              if (currentImg.current >= elem.current.children.length) {
-                elem.current.scrollTo({
-                  left: 0,
-                  behavior: "smooth",
-                });
-                currentImg.current = 1;
-              } else {
-                elem.current.scrollBy({
-                  left: elem.current.clientWidth,
-                  behavior: "smooth",
-                });
-              }
-              currentImg.current++;
-            }
-          }}
-          className="hidden h-full cursor-pointer items-center justify-center bg-gradient-to-l from-black/50 to-black/0 group-hover:flex"
-        >
-          <FontAwesomeIcon icon={faChevronRight} className="h-12 text-white" />
-        </div>
+            currentImg.current--;
+          }
+        }}
+        className="flex cursor-pointer items-center justify-center"
+      >
+        <FontAwesomeIcon
+          icon={faChevronLeft}
+          className="h-12 text-black hover:text-primary"
+        />
       </div>
       <div
         ref={elem}
         className="flex w-full snap-x flex-row overflow-auto *:w-full *:flex-shrink-0 *:snap-center"
       >
         {children}
+      </div>
+      <div
+        onClick={() => {
+          if (elem.current) {
+            if (currentImg.current >= elem.current.children.length) {
+              elem.current.scrollTo({
+                left: 0,
+                behavior: "smooth",
+              });
+              currentImg.current = 1;
+            } else {
+              elem.current.scrollBy({
+                left: elem.current.clientWidth,
+                behavior: "smooth",
+              });
+            }
+            currentImg.current++;
+          }
+        }}
+        className="flex cursor-pointer items-center justify-center"
+      >
+        <FontAwesomeIcon
+          icon={faChevronRight}
+          className="h-12 text-black hover:text-primary"
+        />
       </div>
     </div>
   );
