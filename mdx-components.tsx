@@ -25,16 +25,16 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     MainImg: (props) => <div className="w-screen py-16" {...props} />,
     MainContent: (props) => (
       <div
-        className="flex w-full items-center gap-4 px-16 py-8  text-2xl font-normal"
+        className="flex w-full flex-col gap-4 px-4 py-8 text-2xl font-normal tablet:flex-row  tablet:items-center tablet:px-16"
         {...props}
       />
     ),
     Content: (props) => (
-      <div className="flex w-full flex-col gap-4 p-16" {...props} />
+      <div className="flex w-full flex-col gap-4" {...props} />
     ),
     Aside: (props) => (
       <aside
-        className="flex w-1/3 flex-col gap-4 p-16"
+        className="flex flex-col gap-4 tablet:w-1/3"
         style={{ height: "fit-content" }}
         {...props}
       />
@@ -106,7 +106,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     Categories: ({ children, ...rest }) => (
       <div
-        className="flex w-full flex-col items-center gap-4 p-16 text-2xl font-normal"
+        className="flex w-full flex-col items-center gap-4 p-8 text-2xl font-normal tablet:p-16"
         {...rest}
       >
         {children}
@@ -116,7 +116,9 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Categorie: ({ title, children, ...rest }) => (
       <div className="w-full" {...rest}>
         <h4 className="mb-4 text-2xl font-normal text-black">{title}</h4>
-        <div className="mb-8 flex flex-nowrap gap-4">{children}</div>
+        <div className="mb-8 flex flex-wrap gap-4 tablet:flex-nowrap">
+          {children}
+        </div>
       </div>
     ),
     Card: ({ title, name, img, children, center, ...rest }) => (
