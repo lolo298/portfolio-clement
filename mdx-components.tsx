@@ -12,7 +12,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     h2: (props) => (
       <h2
-        className="whitespace-nowrap text-base font-bold text-primary tablet:text-base"
+        className="whitespace-nowrap text-base font-bold text-primary"
         {...props}
       />
     ),

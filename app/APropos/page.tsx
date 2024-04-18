@@ -40,7 +40,9 @@ export default function Home() {
             </p>
           </aside>
         </div>
-        <FlowingBar color="#000">Lorem</FlowingBar>
+        <FlowingBar color="#000" qte={2} src="/logo.png">
+          Designer UX/UI
+        </FlowingBar>
         <Categories>
           <Categorie title="Lorem">
             <Card title="card title">
